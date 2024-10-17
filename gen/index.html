@@ -11,6 +11,12 @@
     <p id="injury-result"></p>
 
     <script>
+        const heavyInjuries = ["Fractured Leg", "Deep Cut on Arm", "Collapsed Lung", "Severe Concussion"];
+        const mediumInjuries = ["Sprained Ankle", "Moderate Bruise on Torso", "Dislocated Shoulder", "Minor Concussion"];
+        const lightInjuries = ["Small Cut on Finger", "Bruise on Arm", "Scratch on Leg", "Sore Neck"];
+        const injurySources = ["GSW (Gunshot Wound)", "Wolf Bite", "Wolf Scratch", "Fall", "Knife Wound"];
+        const bodyLocations = ["Head", "Arm", "Leg", "Torso", "Back", "Shoulder"];
+
         function generateInjury() {
             let roll = Math.floor(Math.random() * 20) + 1;
             let injury = '';
@@ -30,16 +36,21 @@
         }
 
         function getInjuryByRoll(roll) {
+            let injuryType = '';
+            let injurySource = injurySources[Math.floor(Math.random() * injurySources.length)];
+            let bodyLocation = bodyLocations[Math.floor(Math.random() * bodyLocations.length)];
+
             if (roll >= 2 && roll <= 10) {
-                return 'Heavy Injury';
+                injuryType = heavyInjuries[Math.floor(Math.random() * heavyInjuries.length)];
             } else if (roll >= 11 && roll <= 15) {
-                return 'Medium Injury';
+                injuryType = mediumInjuries[Math.floor(Math.random() * mediumInjuries.length)];
             } else if (roll >= 16 && roll <= 19) {
-                return 'Light Injury';
+                injuryType = lightInjuries[Math.floor(Math.random() * lightInjuries.length)];
             } else if (roll === 20) {
                 return 'No Injury';
             }
-            return 'Unknown Result';
+
+            return `${injuryType} caused by ${injurySource} at ${bodyLocation}`;
         }
     </script>
 </body>
