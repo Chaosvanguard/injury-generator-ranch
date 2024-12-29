@@ -3,9 +3,11 @@ function rollDice() {
 }
 
 function getSeverity(roll) {
-    if (roll <= 6) return "Heavy Injury";
-    if (roll <= 14) return "Medium Injury";
-    return "Light Injury";
+	if (roll === 1) return "Re-Roll";
+	if (roll >= 2 && roll <= 9) return "Heavy Injury";
+	if (roll >= 10 && roll <= 15) return "Medium Injury";
+	if (roll >= 16 && roll <= 19) return "Light Injury";
+	if (roll === 20) return "No Injury";
 }
 
 function generateInjury() {
