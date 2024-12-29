@@ -22,4 +22,3 @@ function displayResult() {
     const result = generateInjury();
     document.getElementById("result").innerHTML = `<pre>${result}</pre>`;
 }
-
