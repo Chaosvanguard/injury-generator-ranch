@@ -66,6 +66,31 @@ button:hover {
     margin-top: 15px;
 }
 
+.rules {
+    margin-top: 20px;
+    padding: 15px;
+    background: #4c566a;
+    border-radius: 5px;
+    color: #eceff4;
+    text-align: center;
+}
+
+.rules h2 {
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+    color: #88c0d0;
+}
+
+.rules ul {
+    list-style: none;
+    padding: 0;
+}
+
+.rules li {
+    margin: 5px 0;
+    font-size: 1rem;
+}
+
 .footer {
     margin-top: 20px;
     font-size: 0.8rem;
