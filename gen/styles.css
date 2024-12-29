@@ -11,8 +11,8 @@ body {
 }
 
 .container {
-    background: #3b4252;
-    color: #d8dee9;
+    background: #3b4252; 
+    color: #d8dee9; 
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     width: 90%;
@@ -51,6 +51,7 @@ button {
     background-color: #81a1c1;
     color: #eceff4;
     cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
 button:hover {
@@ -69,4 +70,5 @@ button:hover {
     margin-top: 20px;
     font-size: 0.8rem;
     color: #88c0d0;
+    text-align: center;
 }
