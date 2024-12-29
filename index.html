@@ -1,46 +1,39 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Random Injury Generator</title>
+    <title>D20 Injury Generator</title>
+    <link rel="stylesheet" href="gen/style.css">
+    <script src="gen/script.js" defer></script>
 </head>
 <body>
-    <h1>Random Injury Generator</h1>
-    <button onclick="generateInjury()">Roll the Dice</button>
-    <p id="injury-result"></p>
+    <div class="container">
+        <h1>D20 Injury Generator</h1>
 
-    <script>
-        function generateInjury() {
-            let roll = Math.floor(Math.random() * 20) + 1;
-            let injury = '';
+        <label for="body-part">Select Body Part:</label>
+        <select id="body-part">
+            <option value="Head">Head</option>
+            <option value="Torso">Torso</option>
+            <option value="right-arm">Right Arm</option>
+            <option value="left-arm">Left Arm</option>
+            <option value="right-leg">Right Leg</option>
+            <option value="left-leg">Left Leg</option>
+        </select>
 
-            if (roll === 1) {
-                let reRoll = Math.floor(Math.random() * 20) + 1;
-                if (reRoll === 1) {
-                    injury = 'Character Kill (CK)';
-                } else {
-                    injury = `Re-Roll result: ${reRoll} - ` + getInjuryByRoll(reRoll);
-                }
-            } else {
-                injury = `Roll: ${roll} - ` + getInjuryByRoll(roll);
-            }
+        <label for="injury-source">Select Source of Injury:</label>
+        <select id="injury-source">
+            <option value="Gunshot">Gunshot</option>
+            <option value="Bite">Bite</option>
+            <option value="Scratch">Scratch</option>
+            <option value="Fall">Fall</option>
+            <option value="Burn">Burn</option>
+        </select>
 
-            document.getElementById('injury-result').innerText = injury;
-        }
+        <button onclick="displayResult()">Roll D20</button>
 
-        function getInjuryByRoll(roll) {
-            if (roll >= 2 && roll <= 10) {
-                return 'Heavy Injury';
-            } else if (roll >= 11 && roll <= 15) {
-                return 'Medium Injury';
-            } else if (roll >= 16 && roll <= 19) {
-                return 'Light Injury';
-            } else if (roll === 20) {
-                return 'No Injury';
-            }
-            return 'Unknown Result';
-        }
-    </script>
+        <div class="result" id="result">
+            <pre>Roll the dice to see the result!</pre>
+        </div>
+    </div>
 </body>
 </html>
