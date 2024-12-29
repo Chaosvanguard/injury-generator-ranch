@@ -2,22 +2,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>D20 Injury Generator</title>
+    <title>Injury Generator</title>
     <link rel="stylesheet" href="gen/styles.css">
     <script src="gen/script.js" defer></script>
 </head>
 <body>
     <div class="container">
-        <h1>D20 Injury Generator</h1>
+        <h1>Injury Generator</h1>
 
         <label for="body-part">Select Body Part:</label>
         <select id="body-part">
             <option value="Head">Head</option>
             <option value="Torso">Torso</option>
-            <option value="right-arm">Right Arm</option>
-            <option value="left-arm">Left Arm</option>
-            <option value="right-leg">Right Leg</option>
-            <option value="left-leg">Left Leg</option>
+            <option value="Right Arm">Right Arm</option>
+            <option value="Left Arm">Left Arm</option>
+            <option value="Right Leg">Right Leg</option>
+            <option value="Left Leg">Left Leg</option>
         </select>
 
         <label for="injury-source">Select Source of Injury:</label>
@@ -34,6 +34,18 @@
         <div class="result" id="result">
             <pre>Roll the dice to see the result!</pre>
         </div>
+		
+		<section class="rules">
+			<h2>Rules of the Roll</h2>
+			<ul>
+				<li><strong>1:</strong> Re-Roll</li>
+				<li><strong>2-9:</strong> Heavy Injury</li>
+				<li><strong>10-15:</strong> Medium Injury</li>
+				<li><strong>16-19:</strong> Light Injury</li>
+				<li><strong>20:</strong> No Injury</li>
+			</ul>
+		</section>
+		
         <footer class="footer">
             <p>Made with ❤️ for roleplayers. By Yozora</p>
         </footer>
