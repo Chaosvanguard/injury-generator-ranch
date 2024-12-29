@@ -13,7 +13,7 @@ function generateInjury() {
     const severity = getSeverity(roll);
     const bodyPart = document.getElementById("body-part").value;
 
-    return `Roll: ${roll}\nSeverity: ${severity}\nAffected: ${bodyPart}\nSource: ${source}`;
+    return `Roll: ${roll}\nSeverity: ${severity}\nAffected: ${bodyPart}`;
 }
 
 function displayResult() {
